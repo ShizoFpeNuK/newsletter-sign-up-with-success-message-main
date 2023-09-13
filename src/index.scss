@@ -1,11 +1,17 @@
-@use "_fonts";
-@use "_variables";
+@use "fonts";
+@use "variables";
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  color: var(--dark-slate-grey);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--charcoal-grey);
 }
 
 body,
@@ -42,7 +48,14 @@ a {
   box-sizing: border-box;
 }
 
+input,
 button {
   border: none;
+  background: none;
+  outline: none;
   font-family: "Roboto";
+}
+
+button {
+  cursor: pointer;
 }

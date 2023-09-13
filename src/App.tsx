@@ -1,37 +1,66 @@
-import React from "react";
+import styles from "./App.module.scss";
+import React, { FormEventHandler } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      {/* <!-- Sign-up form start --> */}
+const App = () => {
+	const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+		event.preventDefault();
+	};
 
-      Stay updated!
+	return (
+		<div className={styles.app}>
+			<div className={styles.app__inner}>
+				<h1 className={styles.app__inner__title}>Stay updated!</h1>
 
-      Join 60,000+ product managers receiving monthly updates on:
+				<p className={styles.app__inner__text}>
+					Join 60,000+ product managers receiving monthly updates on:
+				</p>
 
-      Product discovery and building what matters
-      Measuring to ensure updates are a success
-      And much more!
+				<ul className={styles.app__inner__list}>
+					<li>Product discovery and building what matters</li>
+					<li>Measuring to ensure updates are a success</li>
+					<li>And much more!</li>
+				</ul>
 
-      Email address
-      email@company.com
+				<form
+					className={styles.app__inner__form}
+					onSubmit={onSubmit}
+				>
+					<label>
+						Email address{" "}
+						<input
+							type="email"
+							name="email"
+							autoComplete="on"
+							placeholder="email@company.com"
+						/>
+					</label>
 
-      Subscribe to monthly newsletter
+					<button
+						className={styles.app__inner__form__submit}
+						type="submit"
+					>
+						Subscribe to monthly newsletter
+					</button>
+				</form>
+			</div>
 
-      {/* <!-- Sign-up form end --> */}
+			<div>
+				<img
+					src="illustration-sign-up-desktop.svg"
+					alt="Picture"
+				/>
+			</div>
 
-      {/* <!-- Success message start --> */}
-
-      Thanks for subscribing!
+			{/* <!-- Success message start --> */}
+			{/* Thanks for subscribing!
 
       A confirmation email has been sent to ash@loremcompany.com.
       Please open it and click the button inside to confirm your subscription.
 
-      Dismiss message
-
-      {/* <!-- Success message end --> */}
-    </div>
-  );
-}
+      Dismiss message */}
+			{/* <!-- Success message end --> */}
+		</div>
+	);
+};
 
 export default App;

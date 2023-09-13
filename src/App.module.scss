@@ -1,0 +1,94 @@
+$paddingInputBtn: 17px;
+
+@mixin btnGradientTransition($bgColor) {
+  color: var(--white);
+  width: 100%;
+  padding: $paddingInputBtn;
+  border-radius: 0.5em;
+  background: $bgColor;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.app {
+  display: flex;
+  margin: 0 2%;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 2em;
+  line-height: 1.5;
+
+  .app__inner {
+    padding: 60px 30px 60px 40px;
+
+    .app__inner__title {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .app__inner__text {
+      margin-bottom: 20px;
+    }
+
+    .app__inner__list {
+      margin-bottom: 50px;
+
+      li {
+        margin-bottom: 10px;
+        padding-left: 35px;
+        background: url("../public/icon-list.svg") no-repeat 0 2px;
+        background-size: 19px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .app__inner__form {
+      width: 92%;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        input {
+          margin-top: 7px;
+          border-radius: 0.5em;
+          padding: $paddingInputBtn;
+          border: solid 1px var(--grey);
+          font-size: 14px;
+
+          &:focus {
+            border-color: black;
+          }
+        }
+      }
+
+      .app__inner__form__submit {
+        position: relative;
+        @include btnGradientTransition(var(--dark-slate-grey));
+        z-index: 2;
+
+        &::before {
+          content: "Subscribe to monthly newsletter";
+          position: absolute;
+          left: 0;
+          top: 0;
+          @include btnGradientTransition($bgColor: var(--gradient));
+          opacity: 0;
+          z-index: 1;
+          transition: opacity 0.3s linear;
+          box-shadow: 0 20px 30px hsla(4, 100%, 67%, 40%);
+        }
+    
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

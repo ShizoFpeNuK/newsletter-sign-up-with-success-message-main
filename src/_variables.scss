@@ -2,6 +2,7 @@
   --tomato: hsl(4, 100%, 67%);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
-  --grey: hsl(231, 7%, 60%);
+  --grey: hsla(231, 7%, 60%, 50%);
   --white: hsl(0, 0%, 100%);
+  --gradient: linear-gradient(to right, hsl(351, 100%, 67%), hsl(12, 100%, 66%));
 }
