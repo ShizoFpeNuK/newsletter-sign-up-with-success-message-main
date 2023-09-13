@@ -1,0 +1,48 @@
+@use "_fonts";
+@use "_variables";
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  font-family: "Roboto";
+}

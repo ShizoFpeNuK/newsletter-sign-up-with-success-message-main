@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <!-- Sign-up form start --> */}
+
+      Stay updated!
+
+      Join 60,000+ product managers receiving monthly updates on:
+
+      Product discovery and building what matters
+      Measuring to ensure updates are a success
+      And much more!
+
+      Email address
+      email@company.com
+
+      Subscribe to monthly newsletter
+
+      {/* <!-- Sign-up form end --> */}
+
+      {/* <!-- Success message start --> */}
+
+      Thanks for subscribing!
+
+      A confirmation email has been sent to ash@loremcompany.com.
+      Please open it and click the button inside to confirm your subscription.
+
+      Dismiss message
+
+      {/* <!-- Success message end --> */}
     </div>
   );
 }
