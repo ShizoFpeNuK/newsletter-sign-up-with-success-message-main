@@ -1,0 +1,45 @@
+@use "../../helpers/styles/mixins" as mixins;
+@use "../../helpers/styles/media_variables" as media;
+
+.label__input {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+
+  @media (max-width: media.$smallWidth) {
+    font-size: 9px;
+
+    @media (max-width: media.$mobileSmallWidth) {
+      font-size: 11px;
+    }
+  }
+
+  .error__message {
+    color: var(--tomato);
+  }
+}
+
+input {
+  width: 100%;
+  margin-top: 7px;
+  margin-bottom: 20px;
+  border-radius: 0.5em;
+  padding: 17px;
+  border: solid 1px var(--grey);
+  font-size: 14px;
+
+  @media (max-width: media.$smallWidth) {
+    font-size: 12px;
+
+    @media (max-width: media.$mobileSmallWidth) {
+      font-size: 14px;
+    }
+  }
+
+  &:focus {
+    border-color: black;
+  }
+
+  @include mixins.error__field();
+}

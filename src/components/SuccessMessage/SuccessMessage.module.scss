@@ -1,0 +1,21 @@
+.success_message {
+  margin: 0 25%;
+  padding: 45px 60px 60px;
+  background-color: var(--white);
+  border-radius: 2em;
+  line-height: 1;
+
+  .success_message__img {
+    margin-bottom: 30px;
+  }
+
+  .success_message__title {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+
+  .success_message__text {
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+}

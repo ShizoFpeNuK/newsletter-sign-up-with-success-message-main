@@ -1,0 +1,25 @@
+@use "../../helpers/styles/media_variables" as media;
+
+.button {
+  position: relative;
+  color: var(--white);
+  width: 100%;
+  padding: 17px;
+  border-radius: 0.5em;
+  background: var(--dark-slate-grey);
+  font-weight: 700;
+  font-size: 14px;
+
+  @media (max-width: media.$smallWidth) {
+    font-size: 12px;
+
+    @media (max-width: media.$smallWidth) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    background: var(--gradient);
+    box-shadow: 0 20px 30px hsla(4, 100%, 67%, 40%);
+  }
+}
