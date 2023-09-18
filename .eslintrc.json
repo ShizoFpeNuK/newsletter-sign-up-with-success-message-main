@@ -5,7 +5,7 @@
 		"quotes": ["error", "double"],
 		"jsx-quotes": ["error", "prefer-double"],
 		"prefer-const": "warn",
-		"indent": ["warn", 2],
+		"indent": ["warn", "tab"],
 		"max-len": ["error", { "code": 120 }],
 		"comma-dangle": ["error", "always-multiline"],
 		"semi": ["warn", "always"],
@@ -18,13 +18,6 @@
 		"no-unreachable-loop": "error",
 		"no-unsafe-negation": "error",
 		"arrow-body-style": ["error", "always"],
-		"capitalized-comments": [
-			"error",
-			"always",
-			{
-				"ignorePattern": "see"
-			}
-		],
 		"curly": ["error", "all"],
 		"default-param-last": "error",
 		"eqeqeq": ["error", "always"],
