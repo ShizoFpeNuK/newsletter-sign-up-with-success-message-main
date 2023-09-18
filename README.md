@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://newsletter-sign-up-with-success-message-main-nu.vercel.app/)
+- Live Site URL: [Vercel](https://newsletter-sign-up-with-success-message-main-nu.vercel.app/)
 
 ## My process
 
