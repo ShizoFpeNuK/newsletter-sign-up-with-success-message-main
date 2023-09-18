@@ -1,0 +1,7 @@
+@mixin error__field() {
+  &.error__field {
+    background-color: hsl(5, 100%, 95%);
+    border: solid 1px var(--tomato);
+    color: var(--tomato);
+  }
+}

@@ -1,14 +1,5 @@
-$paddingInputBtn: 17px;
-
-@mixin btnGradientTransition($bgColor) {
-  color: var(--white);
-  width: 100%;
-  padding: $paddingInputBtn;
-  border-radius: 0.5em;
-  background: $bgColor;
-  font-weight: 700;
-  font-size: 14px;
-}
+@use "./helpers/styles/mixins" as mixins;
+@use "./helpers/styles/media_variables" as media;
 
 .app {
   display: flex;
@@ -18,77 +9,124 @@ $paddingInputBtn: 17px;
   border-radius: 2em;
   line-height: 1.5;
 
-  .app__inner {
-    padding: 60px 30px 60px 40px;
+  @media (max-width: media.$smallWidth) {
+    font-size: 12px;
 
-    .app__inner__title {
-      font-size: 50px;
-      margin-bottom: 20px;
+    @media (max-width: media.$mobileWidth) {
+      flex-direction: column-reverse;
+      padding: 0;
+      border-radius: 0;
+      margin: 0;
+
+      @media (max-width: media.$smallWidth) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.app__left {
+  padding: 60px 30px 60px 40px;
+
+  @media (max-width: media.$smallWidth) {
+    padding: 15px 30px 15px 15px;
+
+    @media (max-width: media.$mobileWidth) {
+      padding: 30px 30px 20px 30px;
+      height: 50%;
+    }
+  }
+
+  .app__left__title {
+    font-size: 50px;
+    margin-bottom: 20px;
+
+    @media (max-width: media.$smallWidth) {
+      font-size: 34px;
+
+      @media (max-width: media.$mobileWidth) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .app__left__text {
+    margin-bottom: 20px;
+
+    @media (max-width: media.$smallWidth) {
+      font-size: 14px;
+
+      @media (max-width: media.$smallWidth) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .app__left__list {
+    margin-bottom: 50px;
+
+    @media (max-width: media.$mobileWidth) {
+      margin-bottom: 30px;
     }
 
-    .app__inner__text {
-      margin-bottom: 20px;
+    li {
+      margin-bottom: 10px;
+      padding-left: 35px;
+      background: url("../public/icon-list.svg") no-repeat 0 2px;
+      background-size: 19px;
+
+      @media (max-width: media.$smallWidth) {
+        background-size: 14px;
+        padding-left: 27px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .app__left__form {
+    width: 92%;
+
+    @media (max-width: 950px) {
+      width: 100%;
     }
 
-    .app__inner__list {
-      margin-bottom: 50px;
+    @include mixins.error__field();
+  }
+}
 
-      li {
-        margin-bottom: 10px;
-        padding-left: 35px;
-        background: url("../public/icon-list.svg") no-repeat 0 2px;
-        background-size: 19px;
+.app__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-        &:last-child {
-          margin-bottom: 0;
+  @media (max-width: media.$smallWidth) {
+    justify-content: right;
+    align-items: flex-start;
+  }
+
+  .img__desktop {
+    @media (max-width: media.$smallWidth) {
+      width: 287px;
+
+      @media (max-width: 675px) {
+        width: 310px;
+
+        @media (max-width: media.$mobileWidth) {
+          display: none;
         }
       }
     }
+  }
 
-    .app__inner__form {
-      width: 92%;
+  .img__mobile {
+    display: none;
+    width: 100%;
 
-      label {
-        display: flex;
-        flex-direction: column;
-        font-size: 11px;
-        font-weight: 700;
-        margin-bottom: 20px;
-
-        input {
-          margin-top: 7px;
-          border-radius: 0.5em;
-          padding: $paddingInputBtn;
-          border: solid 1px var(--grey);
-          font-size: 14px;
-
-          &:focus {
-            border-color: black;
-          }
-        }
-      }
-
-      .app__inner__form__submit {
-        position: relative;
-        @include btnGradientTransition(var(--dark-slate-grey));
-        z-index: 2;
-
-        &::before {
-          content: "Subscribe to monthly newsletter";
-          position: absolute;
-          left: 0;
-          top: 0;
-          @include btnGradientTransition($bgColor: var(--gradient));
-          opacity: 0;
-          z-index: 1;
-          transition: opacity 0.3s linear;
-          box-shadow: 0 20px 30px hsla(4, 100%, 67%, 40%);
-        }
-    
-        &:hover::before {
-          opacity: 1;
-        }
-      }
+    @media (max-width: media.$mobileWidth) {
+      display: block;
     }
   }
 }
